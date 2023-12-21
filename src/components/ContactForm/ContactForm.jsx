@@ -16,9 +16,15 @@ class ContactForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    this.props.createContact({
-      name: this.state.name,
-      number: this.state.number
+    // this.props.createContact({
+    //   name: this.state.name,
+    //   number: this.state.number
+    // })
+    this.props.createContact(this.state)
+
+    this.setState({
+      name: '',
+      number: ''
     })
   }
 
