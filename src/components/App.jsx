@@ -18,7 +18,10 @@ class App extends Component {
       ...data,
       id: nanoid()
     }
-    console.log(newContact);
+    
+    this.setState(({contacts}) => ({
+      contacts: [newContact, ...contacts] 
+    }))
   }
 
   deleteContact = (contactId => {
