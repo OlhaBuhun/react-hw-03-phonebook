@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const Filter = ({value, onCangeFiler}) => (
   <label  >
@@ -10,6 +11,10 @@ const Filter = ({value, onCangeFiler}) => (
     />
   </label>
 )
-  
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onCangeFiler: PropTypes.func,
+};
 
 export default Filter;
