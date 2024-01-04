@@ -23,12 +23,13 @@ export const ContactListButton = styled.button`
     cursor: pointer;
     padding: 10px;
     text-align: center;
-    transition: all 0.8s;
+    transition: transform 250vs linear;
     margin: 0 auto 0;
 
     &:hover {
     background-color: red;
     color: #efff00;
+    transform: scale(1,1)
   }
 
 `
