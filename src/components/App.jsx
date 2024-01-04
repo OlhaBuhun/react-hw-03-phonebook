@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from "./ContactForm/ContactForm";
 import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
+import { Container } from "./App.styled";
 
 
 class App extends Component {
@@ -17,7 +18,6 @@ class App extends Component {
   }
 
   createContact = (data) => {
-    console.log(data);
     const newContact = {
       ...data,
       id: nanoid()
@@ -26,7 +26,6 @@ class App extends Component {
 
     const check = this.state.contacts.find(contact =>
       contact.name === newContact.name);
-      console.log(check);
 
     check ? alert(`${newContact.name} is already in contacts`)
     : 
@@ -69,7 +68,7 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <div
+      <Container
         // style={{
         //   height: '100vh',
         //   display: 'flex',
@@ -82,10 +81,10 @@ class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm createContact={this.createContact}/>
         <h2>Contacts</h2>
-        <Filter value={filter} onCangeFiler={this.changeFilter}/>
+        <Filter value={filter} onCangeFilter={this.changeFilter}/>
         <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact} />
        
-      </div>
+      </Container>
     );
   };
   }
