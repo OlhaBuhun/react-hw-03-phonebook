@@ -40,11 +40,11 @@ class App extends Component {
    
   }
 
-  deleteContact = (contactId => {
+  deleteContact = contactId => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId)
     }))
-  })
+  }
 
   changeFilter = (e) => {
     const {value} = e.currentTarget;
