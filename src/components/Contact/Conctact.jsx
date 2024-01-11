@@ -6,7 +6,7 @@ const Contact = ({id, name, number, onDeleteContact}) => (
     <p>{name}: {number}</p>
     <ContactDelitButton 
     type="button"
-    onClick={()=> onDeleteContact(id)}
+    onClick={onDeleteContact}
     >Delete</ContactDelitButton>
   </ContactItem>
 )
