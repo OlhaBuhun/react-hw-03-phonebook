@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import { ContactDelitButton, ContactItem } from './Contact.styled';
 
-const Contact = ({id, name, number, onDeleteContact}) => (
-  <ContactItem >
-    <p>{name}: {number}</p>
-    <ContactDelitButton 
-    type="button"
-    onClick={onDeleteContact}
-    >Delete</ContactDelitButton>
+const Contact = ({ name, number, onDeleteContact }) => (
+  <ContactItem>
+    <p>
+      {name}: {number}
+    </p>
+    <ContactDelitButton type="button" onClick={onDeleteContact}>
+      Delete
+    </ContactDelitButton>
   </ContactItem>
-)
+);
 
 Contact.propTypes = {
   id: PropTypes.string.isRequired,
